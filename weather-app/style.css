@@ -1,0 +1,242 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+      border: none;
+    outline: none;
+    font-family: sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('img/day-bg.png');
+    background-size: 100% 100%;
+}
+@keyframes fadeIn {
+    from { 
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container{
+    width: 400px;
+    height: min-content;
+    background-color:#E0E0E0;
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    animation: fadeIn 0.7s ease;
+}
+
+.search-box{
+    width: 100%;
+    height: min-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-box input{
+    width: 84%;
+    font-size: 20px;
+    text-transform: capitalize;
+    color: #000;
+    background-color: #87bedd;
+    padding: 12px 16px;
+    border-radius: 14px;
+}
+
+.search-box input::placeholder{
+    color: #000;
+}
+
+.search-box button{
+    width: 46px;
+    height: 46px;
+    background-color: #e6f5fb;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.search-box button:hover{
+    color: #fff;
+    background-color: #ababab;
+}
+.weather-body{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-block: 20px;
+}
+
+.weather-body img{
+   width: 150px;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.25));
+}
+.weather-box{
+    margin-block: 20px;
+    text-align: center;
+}
+.weather-box .temperature{
+    font-size: 60px;
+    font-weight: 900;
+    color: #1c1c1c;
+    text-shadow: 0 0 10px rgba(0,0,0,0.15);
+}
+.weather-box .temperature sup{
+    font-size: 20px;
+    position: absolute;
+    font-weight: 600;
+}
+.weather-box .description{
+    font-size:  20px;
+    font-weight: 700;
+    text-transform: capitalize;
+    color: #18171a;
+}
+.weather-details{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.humidity, .wind{
+    display: flex;
+    align-items: center;
+}
+.humidity{
+    margin-left: 20px;
+}
+.wind{
+    margin-right: 20px;
+}
+.weather-details i{
+    font-size: 40px;
+    color: #4ac3ff;
+    text-shadow: 0 0 8px rgba(74,195,255,0.8);
+}
+.weather-details .text{
+    margin-right: 10px;
+    font-size: 16px;
+}
+.text span{
+    font-size: 20px;
+    font-weight: 700;
+
+}
+.location-not-found{
+    margin-top: 20px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.location-not-found h1{
+    font-size: 20px;
+    margin-block-end: 15px;
+}
+.location-not-found img{
+    width: 80%;
+}
+
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Tablet + Mobile */
+@media (max-width: 768px) {
+
+    body {
+        background-size: cover;
+        padding: 15px;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 400px;
+        padding: 20px;
+        border-radius: 16px;
+    }
+
+    .search-box input {
+        width: 78%;
+        font-size: 16px;
+        padding: 10px 12px;
+    }
+
+    .search-box button {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+
+    .weather-body img {
+        width: 120px;
+    }
+
+    .weather-box .temperature {
+        font-size: 42px;
+    }
+
+    .weather-box .temperature sup {
+        font-size: 16px;
+    }
+
+    .weather-box .description {
+        font-size: 16px;
+    }
+
+    .weather-details {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .humidity,
+    .wind {
+        margin: 0;
+    }
+
+    .weather-details i {
+        font-size: 32px;
+    }
+
+    .weather-details .text {
+        font-size: 14px;
+    }
+
+    .text span {
+        font-size: 18px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+
+    .container {
+        padding: 18px;
+    }
+
+    .search-box input {
+        width: 75%;
+        font-size: 15px;
+    }
+
+    .weather-box .temperature {
+        font-size: 36px;
+    }
+}
